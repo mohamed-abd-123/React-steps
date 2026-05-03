@@ -121,6 +121,7 @@ body {
    justify-content: center;
    align-items: center;
    flex-wrap: wrap;
+   gap: 10px;
    
 }
 .box{
@@ -141,3 +142,4 @@ body {
   transform: scale(1.1,1.1);
 
 }
+

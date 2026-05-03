@@ -1,13 +1,12 @@
-// import { useState } from "react";
-
-
-
+import { useState } from "react";
 
 // function Challange() {
 //   const [step, setStep] = useState(1);
 //   const [count, setCount] = useState(0);
-//   const date = new Date();
-//   date.setDate(date.getDate() +count );
+//   // const date = new Date();
+//   // date.setDate(date.getDate() +count );
+//   const date=new Date()
+//   date.setDate(date.getDate())
 //   function stepplus() {
 //     setStep(step + 1);
 //   }
@@ -21,8 +20,8 @@
 //     setCount(count - step);
 //   }
 //   return (
-//     <div style={{ margin: " 0px 600px" }}>
-//       <button onClick={stepmoins}>-</button>
+//     <div style={{ margin: " 0px 600px"}}>
+//       <button onClick={stepmoins} >-</button>
 //       <span>Step : {step}</span>
 //       <button onClick={stepplus}> +</button>
 //       <br />
@@ -30,20 +29,15 @@
 //       <span>Count : {count}</span>
 //       <button onClick={countplus}>+</button>
 //       <br/>
-//       {/* <span>{count===0 ? "today is" 
-//       : count >0 ? `${count} day from today is` 
+//       <span>{count===0 ? "today is"
+//       : count >0 ? `${count} day from today is`
 //       :`${Math.abs(count)} days was ago`} </span>
-//       <span>  {date.toDateString()}</span> */}
-//       <footer>{new Date().toLocaleDateString()}</footer>
+//       <span>  {date.toDatestring}</span>
+//       {/* <span>{new Date().toLocaleDateString()}</span> */}
 //     </div>
 //   );
 // }
 // export default Challange;
-
-
-
-
-
 
 // function Challange() {
 //   const [num1, setNum1] = useState("");
@@ -89,15 +83,8 @@
 
 // export default Challange;
 
-
-
-
-
-
-
-
 // function Challange(){
-    
+
 //     const [open,Setopen]=useState(false)
 //     const[name,Setname]=useState("tttt")
 //     const[mail,Setmail]=useState("tttt")
@@ -111,10 +98,10 @@
 //     return(
 // <div>
 //     <button  onClick={show}>
-//        {!open ? "show" :"hidden"}  
+//        {!open ? "show" :"hidden"}
 //         </button>
-//       <button onClick={retour}>retour</button>  
-        
+//       <button onClick={retour}>retour</button>
+
 //     <br/>
 //      {open &&
 //     <div>
@@ -123,93 +110,76 @@
 //     </div>
 //      }
 // </div>
-        
+
 //     )
 // }
 // export default Challange;
 
+// import { useState } from "react";
 
+// const Cards = [
+//   {
+//     id: 3457,
+//     question: "What language is React Based on ?",
+//     answer: "javascript",
+//   },
+//   {
+//     id: 7336,
+//     question: "What are the building blocks of react apps ?",
+//     answer: "Components",
+//   },
+//   {
+//     id: 8832,
+//     question:
+//       "What's the name of the syntaxe we use to describe a ui in React ?",
+//     answer: "JSX",
+//   },
 
+//   {
+//     id: 1297,
+//     question: "How to pass data from parent to child components ?",
+//     answer: "Props",
+//   },
 
+//   {
+//     id: 9103,
+//     question: "How to give components memory ?",
+//     answer: "useState hook",
+//   },
+//   {
+//     id: 2002,
+//     question:
+//       "What do we call an input element that is completly synchronised with state ?",
+//     answer: "Controlled element",
+//   },
+// ];
 
-
-
-
-
-
-
-
-
-
-
-
-import { useState } from "react";
-
-const Cards = [
-  {
-    id: 3457,
-    question: "What language is React Based on ?",
-    answer: "javascript",
-  },
-  {
-    id: 7336,
-    question: "What are the building blocks of react apps ?",
-    answer: "Components",
-  },
-  {
-    id: 8832,
-    question:
-      "What's the name of the syntaxe we use to describe a ui in React ?",
-    answer: "JSX",
-  },
-
-  {
-    id: 1297,
-    question: "How to pass data from parent to child components ?",
-    answer: "Props",
-  },
-
-  {
-    id: 9103,
-    question: "How to give components memory ?",
-    answer: "useState hook",
-  },
-  {
-    id: 2002,
-    question:
-      "What do we call an input element that is completly synchronised with state ?",
-    answer: "Controlled element",
-  },
-];
-
-
-////////méthode 1
-function App (){
-  return(
-<div className="box">
-  {Cards.map((ele)=>{
-  return  <Card cardobj={ele}/>
-
-  })}
-   
-</div>
-
-  )
-}
-function Card(props){
-  const [clic , Setclic]=useState(true)
-  function verif(){
-    Setclic(clic=>!clic)
-  }
-  return(
-    <div className="card" onClick={verif} style={{backgroundColor : clic ? "" :"green"}}>
-      <p>{ clic ? props.cardobj.question : props.cardobj.answer}</p>
-    </div>
-  )
-}
-export default App;
-
-
+//////méthode 1
+// function App() {
+//   return (
+//     <div className="box">
+//       {Cards.map((ele) => {
+//         return <Card cardobj={ele} key={ele.id} />;
+//       })}
+//     </div>
+//   );
+// }
+// function Card(props) {
+//   const [clic, Setclic] = useState(true);
+//   // function verif(){
+//   //   Setclic(clic=>!clic)
+//   // }
+//   return (
+//     <div
+//       className="card"
+//       onClick={() => Setclic(!clic)}
+//       style={{ backgroundColor: clic ? "" : "green" }}
+//     >
+//       <p>{clic ? props.cardobj.question : props.cardobj.answer}</p>
+//     </div>
+//   );
+// }
+// export default App;
 
 ////////méthode 2
 
@@ -231,6 +201,7 @@ export default App;
 // <div className="card" onClick={verif} style={{backgroundColor : clic ? "" :"green"}}>
 // <p>{ clic ? ele.question : ele.answer}</p>
 //   </div>
-//  ) 
+//  )
 // }
 // export default App;
+
